@@ -20,8 +20,8 @@
 	</Novel-Site>
 	<Novel-Site>
 		<name>笔下文学</name>
-		<comment>bxwx8.org</comment>
-		<url charset="GBK">http://www.bxwx8.org</url>
+		<comment>bxwx9.org</comment>
+		<url charset="UTF-8">https://www.bxwx9.org</url>
 		<chapter-list-element selector="#TabCss dd a" />
 		<content-this-element selector="#content" index="0">
 			<parse to="#{space}"><![CDATA[&nbsp;&nbsp;]]></parse>
