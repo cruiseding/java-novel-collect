@@ -3,10 +3,10 @@ package com.wp.novel.entity;
 import java.io.Serializable;
 
 /**
- * ×î»ù´¡µÄĞ¡ËµÊµÌå
+ * æœ€åŸºç¡€çš„å°è¯´å®ä½“
  * 
  * @author dingpeng
- * @date 2016Äê10ÔÂ2ÈÕ
+ * @date 2016å¹´10æœˆ2æ—¥
  */
 public class Book implements Serializable {
 	private static final long serialVersionUID = -5506787409799909648L;

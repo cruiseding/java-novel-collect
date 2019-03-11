@@ -5,10 +5,10 @@ import java.io.Serializable;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * С˵�½�����VO
+ * 小说内容VO
  * 
  * @author dingpeng
- * @date 2016��9��19��
+ * @date 2016年9月19日
  */
 public class Content implements Serializable {
 

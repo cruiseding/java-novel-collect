@@ -2,7 +2,7 @@ package com.wp.novel.exceptions;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ17ÈÕ
+ * @date 2016å¹´9æœˆ17æ—¥
  */
 public class CrawlException extends NovelSpiderException {
 

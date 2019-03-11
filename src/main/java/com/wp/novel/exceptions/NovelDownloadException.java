@@ -1,10 +1,10 @@
 package com.wp.novel.exceptions;
 
 /**
- * Ğ¡ËµÏÂÔØÒì³£
+ * å°è¯´ä¸‹è½½å¼‚å¸¸
  * 
  * @author dingpeng
- * @date 2016Äê9ÔÂ26ÈÕ
+ * @date 2016å¹´9æœˆ26æ—¥
  */
 public class NovelDownloadException extends NovelSpiderException {
 	private static final long serialVersionUID = -1141885897383743245L;

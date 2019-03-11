@@ -14,7 +14,7 @@ import com.wp.novel.util.NovelSpiderUtil;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ17ÈÕ
+ * @date 2016å¹´9æœˆ17æ—¥
  */
 public class DefaultNovelChapterSpider extends AbstractNovelChapterSpider {
 	public DefaultNovelChapterSpider(String comment) {
@@ -30,8 +30,8 @@ public class DefaultNovelChapterSpider extends AbstractNovelChapterSpider {
 		org.dom4j.Element chapterListElement = ruleMap.get("chapter-list-element");
 		Elements aTags = doc.select(chapterListElement.attributeValue("selector"));
 		if (aTags == null || aTags.isEmpty())
-			throw new NovelSpiderException("Ğ¡ËµÕÂ½ÚÁĞ±í½âÎöÊ§°Ü¡£URL[" + url + "]");
-		// TODO ¿ÕÕÂ½ÚµÄÇé¿ö£¿
+			throw new NovelSpiderException("å°è¯´ç« èŠ‚åˆ—è¡¨è§£æå¤±è´¥ã€‚URL[" + url + "]");
+		// TODO ç©ºç« èŠ‚çš„æƒ…å†µï¼Ÿ
 		int chapterNumber = 0;
 		for (Element aTag : aTags) {
 			Chapter vo = NovelSpiderUtil.parseElement2Chapter(aTag, url);

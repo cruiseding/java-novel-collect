@@ -17,17 +17,17 @@ import com.wp.novel.util.NovelSpiderUtil;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ18ÈÕ
+ * @date 2016å¹´9æœˆ18æ—¥
  */
 public abstract class AbstractNovelContentSpider extends AbstractNovelSpider implements INovelContentSpider {
-	/** Ç°Ò»ÕÂ,ÏÂÒ»ÕÂ½âÎö¹æÔò */
+	/** å‰ä¸€ç« ,ä¸‹ä¸€ç« è§£æè§„åˆ™ */
 	private static final String CHAPTER_MATCH_RULE = ".*/*\\d+\\.[html]{3,4}";
 	protected Document parseDocument;
 	protected Content content = new Content();
 	protected String simpleDomain;
 
 	/**
-	 * ½âÎö²¢¼Ó¹¤×¥È¡µÄÒ³ÃæÄÚÈİ
+	 * è§£æå¹¶åŠ å·¥æŠ“å–çš„é¡µé¢å†…å®¹
 	 * 
 	 * @param crawlString
 	 * @return
@@ -47,7 +47,7 @@ public abstract class AbstractNovelContentSpider extends AbstractNovelSpider imp
 		parseDocument = Jsoup.parse(crawlString);
 		Elements elements = parseDocument.select(thisElement.attributeValue("selector"));
 		if (elements == null || elements.isEmpty())
-			throw new NovelSpiderException("×¥È¡¹æÔò²»ÕıÈ·£¡");
+			throw new NovelSpiderException("æŠ“å–è§„åˆ™ä¸æ­£ç¡®ï¼");
 		int index = thisElement.attributeValue("index") == null ? 0
 				: Integer.parseInt(thisElement.attributeValue("index"));
 		crawlString = elements.get(index).text();
@@ -60,9 +60,9 @@ public abstract class AbstractNovelContentSpider extends AbstractNovelSpider imp
 	}
 
 	/**
-	 * »ñÈ¡ÕÂ½ÚÄÚÈİ
+	 * è·å–ç« èŠ‚å†…å®¹
 	 * 
-	 * @param url ¶ÌÁ´½Ó
+	 * @param url çŸ­é“¾æ¥
 	 * @return
 	 * @throws NovelSpiderException
 	 */
@@ -83,7 +83,7 @@ public abstract class AbstractNovelContentSpider extends AbstractNovelSpider imp
 	}
 
 	/**
-	 * ´ÓÅÀÈ¡µÄÕÂ½ÚÄÚÈİÖĞ½âÎöÎÄÕÂ±êÌâ
+	 * ä»çˆ¬å–çš„ç« èŠ‚å†…å®¹ä¸­è§£ææ–‡ç« æ ‡é¢˜
 	 * 
 	 * @param content
 	 * @return
@@ -102,7 +102,7 @@ public abstract class AbstractNovelContentSpider extends AbstractNovelSpider imp
 	}
 
 	/**
-	 * ´ÓÅÀÈ¡µÄÕÂ½ÚÄÚÈİÖĞ½âÎöÉÏÒ»ÕÂURL
+	 * ä»çˆ¬å–çš„ç« èŠ‚å†…å®¹ä¸­è§£æä¸Šä¸€ç« URL
 	 * 
 	 * @param content
 	 * @return
@@ -122,7 +122,7 @@ public abstract class AbstractNovelContentSpider extends AbstractNovelSpider imp
 	}
 
 	/**
-	 * ´ÓÅÀÈ¡µÄÕÂ½ÚÄÚÈİÖĞ½âÎöÏÂÒ»ÕÂURL
+	 * ä»çˆ¬å–çš„ç« èŠ‚å†…å®¹ä¸­è§£æä¸‹ä¸€ç« URL
 	 * 
 	 * @param content
 	 * @return

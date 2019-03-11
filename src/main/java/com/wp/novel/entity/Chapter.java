@@ -3,22 +3,22 @@ package com.wp.novel.entity;
 import java.io.Serializable;
 
 /**
- * ÕÂ½ÚÊµÌå
+ * ç« èŠ‚å®ä½“
  * 
  * @author dingpeng
- * @date 2016Äê9ÔÂ17ÈÕ
+ * @date 2016å¹´9æœˆ17æ—¥
  */
 public class Chapter implements Serializable, Cloneable {
 	
 	private static final long serialVersionUID = 7689002555266466585L;
 	
-	/** Ğ¡ËµÁ´½Ó£¬ºÍÓòÃûÆ´½Óºó²Å¿ÉÓÃ */
+	/** å°è¯´é“¾æ¥ï¼Œå’ŒåŸŸåæ‹¼æ¥åæ‰å¯ç”¨ */
 	private String href;
 	
-	/** ÕÂ½ÚÃû³Æ */
+	/** ç« èŠ‚åç§° */
 	private String text;
 	
-	/** ÕÂ½ÚºÅ*/
+	/** ç« èŠ‚å·*/
 	private Integer number;
 	
 	public Integer getNumber() {

@@ -22,16 +22,16 @@ import com.wp.novel.util.NovelTextUtil;
 
 /**
  * @author dingpeng
- * @date 2016Äê10ÔÂ1ÈÕ
+ * @date 2016å¹´10æœˆ1æ—¥
  */
 public class NovelDownloaderObserver implements Observer {
 
 	private static ExecutorService service = Executors.newCachedThreadPool();
 
-	/** ÒªÏÂÔØµÄÐ¡ËµµÄÕÂ½ÚÁÐ±íÒ³Ãæ */
+	/** è¦ä¸‹è½½çš„å°è¯´çš„ç« èŠ‚åˆ—è¡¨é¡µé¢ */
 	protected String url;
 
-	/** È¥µôÖ÷ÓòÃûÖ®ºóµÄÏà¶Ôurl */
+	/** åŽ»æŽ‰ä¸»åŸŸåä¹‹åŽçš„ç›¸å¯¹url */
 	protected String relativeUrl;
 
 	protected NovelSiteEnum novelSiteEnum;
@@ -41,7 +41,7 @@ public class NovelDownloaderObserver implements Observer {
 	protected int hasFinishedTaskCount;
 
 	/**
-	 * ÍêÕûµÄÐ¡ËµÕ¾µãÕÂ½ÚÁÐ±íURL
+	 * å®Œæ•´çš„å°è¯´ç«™ç‚¹ç« èŠ‚åˆ—è¡¨URL
 	 * 
 	 * @param url
 	 */
@@ -62,7 +62,7 @@ public class NovelDownloaderObserver implements Observer {
 				INovelDownloader downloader = new DefaultNovelDownloader();
 
 				String path = NovelSpiderUtil.getNovelSavePath(url);
-				// ´´½¨²»´æÔÚµÄÂ·¾¶
+				// åˆ›å»ºä¸å­˜åœ¨çš„è·¯å¾„
 				FileUtils.forceMkdir(new File(path));
 				FileUtils.forceMkdir(new File(path + NovelSpiderUtil.MERGE_PATH_AND_FILENAME.substring(0,
 						NovelSpiderUtil.MERGE_PATH_AND_FILENAME.lastIndexOf('/'))));
@@ -83,7 +83,7 @@ public class NovelDownloaderObserver implements Observer {
 		if (++hasFinishedTaskCount >= taskAllocCount) {
 			String savePath = NovelSpiderUtil.getNovelSavePath(url);
 			NovelTextUtil.multiFileMerge(savePath, savePath + NovelSpiderUtil.MERGE_PATH_AND_FILENAME);
-			service.shutdownNow(); // ¹Ø±ÕÏß³Ì³Ø
+			service.shutdownNow(); // å…³é—­çº¿ç¨‹æ± 
 		}
 	}
 }

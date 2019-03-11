@@ -8,10 +8,10 @@ import com.wp.novel.entity.Chapter;
 import com.wp.novel.exceptions.NovelSpiderException;
 
 /**
- * ±ÊÏÂÎÄÑ§Ğ¡ËµÕÂ½ÚÅÀÈ¡
+ * ç¬”ä¸‹æ–‡å­¦å°è¯´ç« èŠ‚çˆ¬å–
  * 
  * @author dingpeng
- * @date 2016Äê9ÔÂ17ÈÕ
+ * @date 2016å¹´9æœˆ17æ—¥
  */
 public class BxwxNovelChapterSpider extends DefaultNovelChapterSpider {
 	public BxwxNovelChapterSpider(String comment) {
@@ -21,7 +21,7 @@ public class BxwxNovelChapterSpider extends DefaultNovelChapterSpider {
 	@Override
 	public List<Chapter> getChapters(String url) throws NovelSpiderException {
 		chapters = super.getChapters(url);
-		Collections.sort(chapters, new Comparator<Chapter>() { // ±ÊÏÂÎÄÑ§ÅÀÈ¡µÄÕÂ½ÚĞèÒªÖØĞÂÅÅĞò
+		Collections.sort(chapters, new Comparator<Chapter>() { // ç¬”ä¸‹æ–‡å­¦çˆ¬å–çš„ç« èŠ‚éœ€è¦é‡æ–°æ’åº
 			@Override
 			public int compare(Chapter o1, Chapter o2) {
 				return o1.getHref().compareTo(o2.getHref());
@@ -33,7 +33,7 @@ public class BxwxNovelChapterSpider extends DefaultNovelChapterSpider {
 	public static void main(String[] args) throws NovelSpiderException {
 		BxwxNovelChapterSpider spider = new BxwxNovelChapterSpider("bxwx9.org");
 		List<Chapter> vos = spider.getChapters("b/70/70093");
-		System.out.println("ÕÂ½ÚÊıÁ¿£º" + vos.size());
+		System.out.println("ç« èŠ‚æ•°é‡ï¼š" + vos.size());
 		for (Chapter vo : vos) {
 			System.out.println(vo.getText() + "[" + vo.getHref() + "]");
 		}

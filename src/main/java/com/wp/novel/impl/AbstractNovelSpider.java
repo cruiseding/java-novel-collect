@@ -28,11 +28,11 @@ import com.wp.novel.util.NovelSpiderUtil;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ18ÈÕ
+ * @date 2016å¹´9æœˆ18æ—¥
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractNovelSpider implements INovelSpider {
-	/** ÕÂ½ÚÅÀÈ¡¹æÔò */
+	/** ç« èŠ‚çˆ¬å–è§„åˆ™ */
 	protected static final Map<String, Map<String, Element>> allRuleMap = new HashMap<>();
 	protected String domain;
 	protected List<Chapter> chapters = new ArrayList<>();;
@@ -74,13 +74,13 @@ public abstract class AbstractNovelSpider implements INovelSpider {
 			if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
 				crawlResult = EntityUtils.toString(httpResponse.getEntity(), charset);
 			} else {
-				throw new CrawlException("×¥È¡Ê§°Ü£¬HTTP×´Ì¬Âë£º" + statusLine.getStatusCode());
+				throw new CrawlException("æŠ“å–å¤±è´¥ï¼ŒHTTPçŠ¶æ€ç ï¼š" + statusLine.getStatusCode());
 			}
 			httpResponse.close();
 			httpClient.close();
 			return crawlResult;
 		} catch (IOException e) {
-			throw new NovelSpiderException("×¥È¡Ê§°Ü£¬Ê§°ÜÔ­Òò£º" + e.getMessage(), e);
+			throw new NovelSpiderException("æŠ“å–å¤±è´¥ï¼Œå¤±è´¥åŸå› ï¼š" + e.getMessage(), e);
 		}
 	}
 

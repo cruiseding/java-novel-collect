@@ -6,16 +6,16 @@ import com.wp.novel.entity.Book;
 import com.wp.novel.exceptions.NovelSpiderException;
 
 /**
- * ÅÀÈ¡Ò³ÃæÖĞµÄËùÓĞĞ¡ËµÊµÌå£¬²¢Ìá¹©Ò»¸ö·½·¨ÓÃÀ´ÅĞ¶ÏÊÇ·ñ»¹ÓĞÏÂÒ»Ò³¿ÉÒÔÅÀÈ¡
+ * çˆ¬å–é¡µé¢ä¸­çš„æ‰€æœ‰å°è¯´å®ä½“ï¼Œå¹¶æä¾›ä¸€ä¸ªæ–¹æ³•ç”¨æ¥åˆ¤æ–­æ˜¯å¦è¿˜æœ‰ä¸‹ä¸€é¡µå¯ä»¥çˆ¬å–
  * 
  * @author dingpeng
- * @date 2016Äê10ÔÂ2ÈÕ
+ * @date 2016å¹´10æœˆ2æ—¥
  * @param <E>
  */
 public interface INovelBookSpider<E extends Book> {
 
 	/**
-	 * ÅÀÈ¡µ±Ç°Ò³ÃæÖĞËùÓĞµÄĞ¡ËµÊµÌå
+	 * çˆ¬å–å½“å‰é¡µé¢ä¸­æ‰€æœ‰çš„å°è¯´å®ä½“
 	 * 
 	 * @param url
 	 * @return
@@ -24,7 +24,7 @@ public interface INovelBookSpider<E extends Book> {
 	public List<E> getsBook(String url) throws NovelSpiderException;
 
 	/**
-	 * ÅÀÍêÕâ¸öÒ³ÃæÖ®ºóÊÇ·ñ»¹ÓĞÏÂÒ»Ò³
+	 * çˆ¬å®Œè¿™ä¸ªé¡µé¢ä¹‹åæ˜¯å¦è¿˜æœ‰ä¸‹ä¸€é¡µ
 	 * 
 	 * @return
 	 */

@@ -2,7 +2,7 @@ package com.wp.novel.exceptions;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ18ÈÕ
+ * @date 2016å¹´9æœˆ18æ—¥
  */
 public class ParseRuleException extends NovelSpiderException {
 	

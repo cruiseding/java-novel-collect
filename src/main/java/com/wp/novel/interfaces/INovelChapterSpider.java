@@ -7,13 +7,13 @@ import com.wp.novel.exceptions.NovelSpiderException;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ17ÈÕ
+ * @date 2016å¹´9æœˆ17æ—¥
  */
 public interface INovelChapterSpider extends INovelSpider {
 	/**
-	 * ÈçÔ­Á´½Ó£º http://www.aaa.com/xiaoshuo/bbb.html ÄÇÃ´Ö»ĞèÒª¸øxiaoshuo/bbb.html¼´¿É
+	 * å¦‚åŸé“¾æ¥ï¼š http://www.aaa.com/xiaoshuo/bbb.html é‚£ä¹ˆåªéœ€è¦ç»™xiaoshuo/bbb.htmlå³å¯
 	 * 
-	 * @param url Òª»ñÈ¡ÕÂ½ÚÁĞ±íµÄ¶Ìurl
+	 * @param url è¦è·å–ç« èŠ‚åˆ—è¡¨çš„çŸ­url
 	 * @return
 	 */
 	public List<Chapter> getChapters(String url) throws NovelSpiderException;

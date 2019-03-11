@@ -9,14 +9,13 @@ import com.wp.novel.interfaces.INovelChapterSpider;
 
 /**
  * @author dingpeng
- * @date 2016年9月17日
  */
 public abstract class AbstractNovelChapterSpider extends AbstractNovelSpider implements INovelChapterSpider {
 
 	protected String comment;
 
 	/**
-	 * @param url 要获取章节列表的短url
+	 * @param url
 	 * @return
 	 */
 	public abstract List<Chapter> getChapters(String url) throws NovelSpiderException;

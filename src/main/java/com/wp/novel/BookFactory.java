@@ -5,10 +5,10 @@ import com.wp.novel.impl.book.BxwxBookSpider;
 import com.wp.novel.interfaces.INovelBookSpider;
 
 /**
- * ÊéÁĞ±íÅÀ³æ¹¤³§
+ * ä¹¦åˆ—è¡¨çˆ¬è™«å·¥å‚
  * 
  * @author dingpeng
- * @date 2016Äê10ÔÂ2ÈÕ
+ * @date 2016å¹´10æœˆ2æ—¥
  */
 public final class BookFactory {
 
@@ -16,7 +16,7 @@ public final class BookFactory {
 	}
 
 	/**
-	 * »ñÈ¡Ò»¸ö±ÊÏÂÎÄÑ§Õ¾µãµÄĞ¡ËµÅÀ³æ
+	 * è·å–ä¸€ä¸ªç¬”ä¸‹æ–‡å­¦ç«™ç‚¹çš„å°è¯´çˆ¬è™«
 	 * 
 	 * @return
 	 */

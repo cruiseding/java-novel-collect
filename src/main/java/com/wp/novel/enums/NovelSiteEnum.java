@@ -3,10 +3,10 @@ package com.wp.novel.enums;
 import java.io.Serializable;
 
 /**
- * ÒÑ¾­±»Ö§³ÖµÄĞ¡ËµÕ¾µãÃ¶¾Ù
+ * å·²ç»è¢«æ”¯æŒçš„å°è¯´ç«™ç‚¹æšä¸¾
  * 
  * @author dingpeng
- * @date 2016Äê9ÔÂ27ÈÕ
+ * @date 2016å¹´9æœˆ27æ—¥
  */
 public enum NovelSiteEnum implements Serializable {
 
@@ -38,28 +38,28 @@ public enum NovelSiteEnum implements Serializable {
 
 	public static NovelSiteEnum getEnumByComment(String comment) {
 		if (comment == null)
-			throw new IllegalArgumentException("comment ²»ÄÜÎªnull");
+			throw new IllegalArgumentException("comment ä¸èƒ½ä¸ºnull");
 		for (NovelSiteEnum novelSiteEnum : values()) {
 			if (comment.equalsIgnoreCase(novelSiteEnum.getComment())) {
 				return novelSiteEnum;
 			}
 		}
-		throw new RuntimeException("²»Ö§³ÖµÄÍøÕ¾£º" + comment);
+		throw new RuntimeException("ä¸æ”¯æŒçš„ç½‘ç«™ï¼š" + comment);
 	}
 
 	/**
-	 * @param url ¿ÉÒÔÊÇÒ»¸öÍêÕûµÄurl£¬Ò²¿ÉÒÔÊÇÖ»°üº¬ÓòÃûµÄurl
+	 * @param url å¯ä»¥æ˜¯ä¸€ä¸ªå®Œæ•´çš„urlï¼Œä¹Ÿå¯ä»¥æ˜¯åªåŒ…å«åŸŸåçš„url
 	 * @return
 	 */
 	public static NovelSiteEnum getEnumByUrl(String url) {
 		if (url == null)
-			throw new IllegalArgumentException("url ²»ÄÜÎªnull");
+			throw new IllegalArgumentException("url ä¸èƒ½ä¸ºnull");
 		for (NovelSiteEnum novelSiteEnum : values()) {
 			if (url.contains(novelSiteEnum.getComment())) {
 				return novelSiteEnum;
 			}
 		}
-		throw new RuntimeException("²»Ö§³ÖµÄÍøÕ¾£º" + url);
+		throw new RuntimeException("ä¸æ”¯æŒçš„ç½‘ç«™ï¼š" + url);
 	}
 
 	public static NovelSiteEnum getEnumById(int id) {
@@ -68,6 +68,6 @@ public enum NovelSiteEnum implements Serializable {
 				return novelSiteEnum;
 			}
 		}
-		throw new RuntimeException("²»Ö§³ÖµÄÍøÕ¾id£º" + id);
+		throw new RuntimeException("ä¸æ”¯æŒçš„ç½‘ç«™idï¼š" + id);
 	}
 }

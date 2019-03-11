@@ -14,10 +14,10 @@ import com.wp.novel.impl.AbstractNovelSpiderV2;
 import com.wp.novel.interfaces.INovelBookSpider;
 
 /**
- * ±ÊÏÂÎÄÑ§Ğ¡ËµÁĞ±íÒ³ÅÀ³æ
+ * ç¬”ä¸‹æ–‡å­¦å°è¯´åˆ—è¡¨é¡µçˆ¬è™«
  * 
  * @author dingpeng
- * @date 2016Äê10ÔÂ2ÈÕ
+ * @date 2016å¹´10æœˆ2æ—¥
  */
 public class BxwxBookSpider extends AbstractNovelSpiderV2 implements INovelBookSpider<BxwxBook> {
 
@@ -33,32 +33,32 @@ public class BxwxBookSpider extends AbstractNovelSpiderV2 implements INovelBookS
 		parseDoc.setBaseUri("http://www." + NovelSiteEnum.BiXiaWenXue.getComment());
 		Elements grids = parseDoc.getElementsByClass("grid");
 		if (grids == null || grids.isEmpty())
-			throw new NovelSpiderException("Ã»ÓĞÕÒµ½Æ¥Åäclass=gridµÄÔªËØ");
+			throw new NovelSpiderException("æ²¡æœ‰æ‰¾åˆ°åŒ¹é…class=gridçš„å…ƒç´ ");
 
 		Elements trs = grids.get(0).getElementsByTag("tr");
 		if (trs == null || trs.isEmpty() || trs.size() == 1)
-			throw new NovelSpiderException("Ã»ÓĞÕÒµ½Æ¥Åätag=trµÄÔªËØ£¬»òÕßÔªËØ³¤¶ÈÖ»ÓĞ1");
+			throw new NovelSpiderException("æ²¡æœ‰æ‰¾åˆ°åŒ¹é…tag=trçš„å…ƒç´ ï¼Œæˆ–è€…å…ƒç´ é•¿åº¦åªæœ‰1");
 
 		List<BxwxBook> books = new ArrayList<>();
-		for (int i = 1, size = trs.size(); i < size; i++) { // µÚÒ»¸öÔªËØÎª±êÌâ£¬Ìø¹ı
+		for (int i = 1, size = trs.size(); i < size; i++) { // ç¬¬ä¸€ä¸ªå…ƒç´ ä¸ºæ ‡é¢˜ï¼Œè·³è¿‡
 			BxwxBook book = parseElementAndCreateBook(trs, i);
 			books.add(book);
 		}
 		return books;
 	}
 
-	/** ½âÎöTrÔªËØ²¢·µ»ØBookÊµÌå */
+	/** è§£æTrå…ƒç´ å¹¶è¿”å›Bookå®ä½“ */
 	private BxwxBook parseElementAndCreateBook(Elements trs, int i) {
 		BxwxBook book = new BxwxBook();
 		Elements tds = trs.get(i).getElementsByTag("td");
-		assert tds.size() == 6 : "³¤¶È²»Îª6£¬ÄãÔÚ¶ºÎÒÂğ£¿";
+		assert tds.size() == 6 : "é•¿åº¦ä¸ä¸º6ï¼Œä½ åœ¨é€—æˆ‘å—ï¼Ÿ";
 		Element booknameTag = tds.get(0).getElementsByTag("a").first();
 		book.setBookname(booknameTag.text());
 		book.setUrl(booknameTag.absUrl("href"));
-		book.setUrl(book.getUrl().replace("binfo", "b").replace(".htm", "")); // Ìæ»»Ğ¡ËµÖ÷Ò³ÃæÎªÕÂ½ÚÒ³
+		book.setUrl(book.getUrl().replace("binfo", "b").replace(".htm", "")); // æ›¿æ¢å°è¯´ä¸»é¡µé¢ä¸ºç« èŠ‚é¡µ
 		Element lastUpdateTag = tds.get(1).getElementsByTag("a").first();
 		book.setLastUpdateChapter(lastUpdateTag == null ? null : lastUpdateTag.text());
-		book.setLastUpdateChapterUrl(lastUpdateTag == null ? null : lastUpdateTag.absUrl("href")); // Ã²ËÆÕâ¸öURLºÍĞ¡ËµÕÂ½ÚÁĞ±íÒ³URLÊÇÒ»ÑùµÄ¡£¡£
+		book.setLastUpdateChapterUrl(lastUpdateTag == null ? null : lastUpdateTag.absUrl("href")); // è²Œä¼¼è¿™ä¸ªURLå’Œå°è¯´ç« èŠ‚åˆ—è¡¨é¡µURLæ˜¯ä¸€æ ·çš„ã€‚ã€‚
 		book.setAuthor(tds.get(2).text());
 		book.setSize(tds.get(3).text());
 		book.setLastUpdateTime(tds.get(4).text());
@@ -68,6 +68,6 @@ public class BxwxBookSpider extends AbstractNovelSpiderV2 implements INovelBookS
 
 	@Override
 	public boolean hasNextPage() {
-		return parseDoc.select("#pagelink .next").first() != null; // Ö»ÒªÓĞÏÂÒ»Ò³Õâ¸öÔªËØÔÚ£¬ËµÃ÷¾ÍÃ»×¥È¡µ½×îºó
+		return parseDoc.select("#pagelink .next").first() != null; // åªè¦æœ‰ä¸‹ä¸€é¡µè¿™ä¸ªå…ƒç´ åœ¨ï¼Œè¯´æ˜å°±æ²¡æŠ“å–åˆ°æœ€å
 	}
 }

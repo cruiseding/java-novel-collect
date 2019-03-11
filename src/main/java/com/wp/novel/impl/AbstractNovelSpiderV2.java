@@ -18,20 +18,20 @@ import com.wp.novel.interfaces.INovelSpider;
 import com.wp.novel.util.NovelSpiderUtil;
 
 /**
- * µÚ¶ş°æ±¾£¬±ÜÃâµÚÒ»°æ±¾Æµ·±¶ÔURL½øĞĞ²»±ØÒªµÄ½âÎö¡¢Æ´½ÓµÈ²Ù×÷
+ * ç¬¬äºŒç‰ˆæœ¬ï¼Œé¿å…ç¬¬ä¸€ç‰ˆæœ¬é¢‘ç¹å¯¹URLè¿›è¡Œä¸å¿…è¦çš„è§£æã€æ‹¼æ¥ç­‰æ“ä½œ
  * 
  * @author dingpeng
- * @date 2016Äê10ÔÂ2ÈÕ
+ * @date 2016å¹´10æœˆ2æ—¥
  */
 public abstract class AbstractNovelSpiderV2 implements INovelSpider {
 	protected String domain;
 	protected Document parseDoc;
 
 	/**
-	 * ÅÀÈ¡ÍøÒ³ÄÚÈİ
+	 * çˆ¬å–ç½‘é¡µå†…å®¹
 	 * 
-	 * @param url     ÍêÕûµÄURL
-	 * @param charset ÍøÒ³±àÂë¸ñÊ½
+	 * @param url     å®Œæ•´çš„URL
+	 * @param charset ç½‘é¡µç¼–ç æ ¼å¼
 	 */
 	@Override
 	public String crawl(String url, String charset) throws NovelSpiderException {
@@ -47,10 +47,10 @@ public abstract class AbstractNovelSpiderV2 implements INovelSpider {
 			if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
 				return EntityUtils.toString(response.getEntity(), charset);
 			} else {
-				throw new CrawlException("×¥È¡Ê§°Ü£¬HTTP×´Ì¬Âë£º" + statusLine.getStatusCode());
+				throw new CrawlException("æŠ“å–å¤±è´¥ï¼ŒHTTPçŠ¶æ€ç ï¼š" + statusLine.getStatusCode());
 			}
 		} catch (IOException e) {
-			throw new NovelSpiderException("×¥È¡Ê§°Ü£¬Ê§°ÜÔ­Òò£º" + e.getMessage(), e);
+			throw new NovelSpiderException("æŠ“å–å¤±è´¥ï¼Œå¤±è´¥åŸå› ï¼š" + e.getMessage(), e);
 		}
 	}
 

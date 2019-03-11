@@ -13,10 +13,10 @@ import com.wp.novel.interfaces.Observer;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ27ÈÕ
+ * @date 2016å¹´9æœˆ27æ—¥
  */
 public class NovelDownloaderObservable implements Observable, Runnable {
-	/** ÒÑ¾­×¢²áµÄ¹Û²ìÕßÁĞ±í */
+	/** å·²ç»æ³¨å†Œçš„è§‚å¯Ÿè€…åˆ—è¡¨ */
 	protected List<Observer> observers = new ArrayList<>();
 	protected INovelDownloader downloader;
 	protected String path;
@@ -53,7 +53,7 @@ public class NovelDownloaderObservable implements Observable, Runnable {
 		while (iterator.hasNext()) {
 			Observer current = iterator.next();
 			if (current.equals(observer)) {
-				iterator.remove(); // ÒÆ³ıµ±Ç°ÔªËØ
+				iterator.remove(); // ç§»é™¤å½“å‰å…ƒç´ 
 			}
 		}
 	}

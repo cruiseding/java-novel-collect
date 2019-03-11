@@ -1,10 +1,10 @@
 package com.wp.novel.entity;
 
 /**
- * ±ÊÏÂÎÄÑ§Ğ¡ËµÊµÌå
+ * ç¬”ä¸‹æ–‡å­¦å°è¯´å®ä½“
  * 
  * @author dingpeng
- * @date 2016Äê10ÔÂ2ÈÕ
+ * @date 2016å¹´10æœˆ2æ—¥
  */
 public class BxwxBook extends Book {
 

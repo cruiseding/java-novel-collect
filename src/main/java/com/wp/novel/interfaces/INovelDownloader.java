@@ -7,19 +7,19 @@ import com.wp.novel.enums.NovelSiteEnum;
 import com.wp.novel.exceptions.NovelDownloadException;
 
 /**
- * Ğ¡ËµÕÂ½ÚÏÂÔØÆ÷
+ * å°è¯´ç« èŠ‚ä¸‹è½½å™¨
  * 
  * @author dingpeng
- * @date 2016Äê9ÔÂ27ÈÕ
+ * @date 2016å¹´9æœˆ27æ—¥
  */
 public interface INovelDownloader {
-	/** ÏÂÔØÊ§°ÜÊ±ÖØÊÔµÄ´ÎÊı */
+	/** ä¸‹è½½å¤±è´¥æ—¶é‡è¯•çš„æ¬¡æ•° */
 	public static final int TRY_TIME = 3;
 
 	/**
-	 * @param path          ±£´æÎÄ¼şµÄÂ·¾¶
+	 * @param path          ä¿å­˜æ–‡ä»¶çš„è·¯å¾„
 	 * @param novelSiteEnum
-	 * @param chapters      ÒªÏÂÔØµÄÕÂ½Ú
+	 * @param chapters      è¦ä¸‹è½½çš„ç« èŠ‚
 	 * @throws Exception
 	 */
 	public void download(String path, NovelSiteEnum novelSiteEnum, List<Chapter> chapters)

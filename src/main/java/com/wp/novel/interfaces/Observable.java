@@ -1,10 +1,10 @@
 package com.wp.novel.interfaces;
 
 /**
- * ±»¹Û²ìÕß
+ * è¢«è§‚å¯Ÿè€…
  * 
  * @author dingpeng
- * @date 2016Äê9ÔÂ26ÈÕ
+ * @date 2016å¹´9æœˆ26æ—¥
  */
 public interface Observable {
 	

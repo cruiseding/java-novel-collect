@@ -5,7 +5,7 @@ import com.wp.novel.exceptions.NovelSpiderException;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ19ÈÕ
+ * @date 2016å¹´9æœˆ19æ—¥
  */
 public interface INovelContentSpider {
 

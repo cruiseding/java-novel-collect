@@ -15,7 +15,7 @@ import com.wp.novel.interfaces.INovelDownloader;
 
 /**
  * @author dingpeng
- * @date 2016Äê9ÔÂ27ÈÕ
+ * @date 2016å¹´9æœˆ27æ—¥
  */
 public class DefaultNovelDownloader implements INovelDownloader {
 
@@ -25,22 +25,22 @@ public class DefaultNovelDownloader implements INovelDownloader {
 		PrintWriter out = null;
 		try {
 			out = new PrintWriter(path, "UTF-8");
-			assert chapters == null || chapters.isEmpty() : "ÕÂ½ÚÁĞ±í²»Ó¦Îªnull»òÎªsize=0";
+			assert chapters == null || chapters.isEmpty() : "ç« èŠ‚åˆ—è¡¨ä¸åº”ä¸ºnullæˆ–ä¸ºsize=0";
 			for (Chapter chapter : chapters) {
-				System.out.println("ÕıÔÚÏÂÔØ£¬" + chapter.getText() + ", µÚ" + chapter.getNumber() + "ÕÂ");
+				System.out.println("æ­£åœ¨ä¸‹è½½ï¼Œ" + chapter.getText() + ", ç¬¬" + chapter.getNumber() + "ç« ");
 				Content content = null;
 				try {
 					content = tryAndDownload(novelSiteEnum, chapter.getHref());
 				} catch (NovelSpiderException e) {
-					// ³¢ÊÔ¶à´ÎÏÂÔØÊ§°ÜÁË
+					// å°è¯•å¤šæ¬¡ä¸‹è½½å¤±è´¥äº†
 					content = new Content();
 					content.setTitle(chapter.getText());
-					content.setContent("ºÜ±§Ç¸£¬" + e.getMessage());
+					content.setContent("å¾ˆæŠ±æ­‰ï¼Œ" + e.getMessage());
 				}
 				out.println(content.getTitle());
 				out.println(content.getContent());
 				try {
-					Thread.sleep(1_000);// ÏÂÔØ²»ÒªÌ«Æµ·±
+					Thread.sleep(1_000);// ä¸‹è½½ä¸è¦å¤ªé¢‘ç¹
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -53,7 +53,7 @@ public class DefaultNovelDownloader implements INovelDownloader {
 	}
 
 	/**
-	 * ¶à´Î³¢ÊÔÏÂÔØ
+	 * å¤šæ¬¡å°è¯•ä¸‹è½½
 	 * 
 	 * @param novelSiteEnum
 	 * @param url
@@ -66,15 +66,15 @@ public class DefaultNovelDownloader implements INovelDownloader {
 		for (int i = 1; i <= TRY_TIME; i++) {
 			try {
 				content = contentSpider.getContent(url);
-				break; // ÏÂÔØ³É¹¦
+				break; // ä¸‹è½½æˆåŠŸ
 			} catch (NovelSpiderException e) {
-				;// ÖØÊÔ
+				;// é‡è¯•
 			}
 		}
 		if (content != null) {
 			return content;
 		} else {
-			throw new NovelSpiderException("³¢ÊÔ" + TRY_TIME + "´ÎÏÂÔØ¾ùÊ§°ÜÁË£¡");
+			throw new NovelSpiderException("å°è¯•" + TRY_TIME + "æ¬¡ä¸‹è½½å‡å¤±è´¥äº†ï¼");
 		}
 	}
 }
